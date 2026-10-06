@@ -1,6 +1,6 @@
 from PIL import Image
 import io
-``
+
 import streamlit as st
 
 st.set_page_config(
