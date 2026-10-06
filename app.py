@@ -1,3 +1,6 @@
+from PIL import Image
+import io
+``
 import streamlit as st
 
 st.set_page_config(
@@ -101,6 +104,28 @@ if character_files:
 
 if st.button("GIF生成"):
 
-    st.success(
-        "GIF生成処理を開始します（次ステップで実装）"
-    )
+    if not background_file:
+
+        st.error(
+            "背景画像を選択してください"
+        )
+
+    elif not character_files:
+
+        st.error(
+            "キャラクター画像を選択してください"
+        )
+
+    else:
+
+        st.success(
+            "GIF生成テスト成功"
+        )
+
+        st.write(
+            f"背景画像: {background_file.name}"
+        )
+
+        st.write(
+            f"キャラクター数: {len(character_files)}"
+        )
