@@ -95,3 +95,12 @@ if character_files:
     st.subheader("現在の設定")
 
     st.json(character_settings)
+# ----------------------------
+# GIF生成ボタン
+# ----------------------------
+
+if st.button("GIF生成"):
+
+    st.success(
+        "GIF生成処理を開始します（次ステップで実装）"
+    )
