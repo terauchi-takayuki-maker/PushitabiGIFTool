@@ -312,7 +312,7 @@ if st.button("GIF生成"):
         # キャラ画像読込
         # --------------------------
 
-     　        loaded_characters = []
+     　 loaded_characters = []
 
         for character_file in character_files:
 
