@@ -15,8 +15,23 @@ st.title("🚄 Pushitabi GIF Generator")
 # ==========================================
 # 透明余白削除
 # ==========================================
+# ==========================================
+# 透明余白削除
+# ==========================================
 
 def trim_transparent_margin(img):
+
+    rgba_img = img.convert("RGBA")
+
+    alpha = rgba_img.getchannel("A")
+
+    bbox = alpha.getbbox()
+
+    if bbox is None:
+        return rgba_img
+
+    return rgba_img.crop(bbox)
+
 
 # ==========================================
 # GIF生成
@@ -133,16 +148,6 @@ def generate_gif_buffer(
     gif_buffer.seek(0)
 
     return gif_buffer
-    rgba_img = img.convert("RGBA")
-
-    alpha = rgba_img.getchannel("A")
-
-    bbox = alpha.getbbox()
-
-    if bbox is None:
-        return rgba_img
-
-    return rgba_img.crop(bbox)
 # ----------------------------
 # 背景画像
 # ----------------------------
