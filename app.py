@@ -348,11 +348,10 @@ if st.button("GIF生成"):
             f"キャラクター数: {len(loaded_characters)}"
         )
 
-      loaded_characters.sort(
+       loaded_characters.sort(
        key=lambda x: x["order"]
        )
 　　　　gif_buffer = generate_gif_buffer(
-  　　loaded_characters.sort(
     key=lambda x: x["order"]
 )
 
