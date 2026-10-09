@@ -139,3 +139,21 @@ if st.button("GIF生成"):
             caption="背景画像",
             width=300
         )
+        loaded_characters = []
+
+        for character_file in character_files:
+
+            img = Image.open(
+                character_file
+            ).convert("RGBA")
+
+            loaded_characters.append(
+                {
+                    "file_name": character_file.name,
+                    "image": img
+                }
+            )
+
+        st.write(
+            f"読込キャラ数: {len(loaded_characters)}"
+        )
