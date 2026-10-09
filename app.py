@@ -272,9 +272,9 @@ if st.button("GIF生成"):
         # キャラ画像読込
         # --------------------------
 
-        loaded_characters = []
+     loaded_characters = []
 
-        for character_file in character_files:
+for character_file in character_files:
 
     img = Image.open(
         character_file
@@ -295,21 +295,6 @@ if st.button("GIF生成"):
             ]["adjust"]
         }
     )
-    {
-        "file_name": character_file.name,
-        "image": img,
-        "order": character_settings[
-            len(loaded_characters)
-        ]["order"],
-        "duration": character_settings[
-            len(loaded_characters)
-        ]["duration"],
-        "adjust": character_settings[
-            len(loaded_characters)
-        ]["adjust"]
-    }
-)
-
         st.success(
             "画像読込成功"
         )
