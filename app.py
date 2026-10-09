@@ -351,10 +351,7 @@ if st.button("GIF生成"):
        loaded_characters.sort(
        key=lambda x: x["order"]
        )
-　　　　gif_buffer = generate_gif_buffer(
-    key=lambda x: x["order"]
-)
-
+    
 gif_buffer = generate_gif_buffer(
     background_img,
     loaded_characters
