@@ -147,12 +147,21 @@ if st.button("GIF生成"):
                 character_file
             ).convert("RGBA")
 
-            loaded_characters.append(
-                {
-                    "file_name": character_file.name,
-                    "image": img
-                }
-            )
+           loaded_characters.append(
+    {
+        "file_name": character_file.name,
+        "image": img,
+        "order": character_settings[
+            len(loaded_characters)
+        ]["order"],
+        "duration": character_settings[
+            len(loaded_characters)
+        ]["duration"],
+        "adjust": character_settings[
+            len(loaded_characters)
+        ]["adjust"]
+    }
+)
 
         st.write(
             f"読込キャラ数: {len(loaded_characters)}"
