@@ -130,3 +130,12 @@ if st.button("GIF生成"):
         st.write(
             f"キャラクター数: {len(character_files)}"
         )
+        background_img = Image.open(
+            background_file
+        ).convert("RGBA")
+
+        st.image(
+            background_img,
+            caption="背景画像",
+            width=300
+        )
