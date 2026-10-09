@@ -147,7 +147,7 @@ if st.button("GIF生成"):
                 character_file
             ).convert("RGBA")
 
-           loaded_characters.append(
+            loaded_characters.append(
     {
         "file_name": character_file.name,
         "image": img,
