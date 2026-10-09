@@ -166,3 +166,10 @@ if st.button("GIF生成"):
         st.write(
             f"読込キャラ数: {len(loaded_characters)}"
         )
+        loaded_characters.sort(
+            key=lambda x: x["order"]
+        )
+
+        st.write(
+            "並び替え完了"
+        )
