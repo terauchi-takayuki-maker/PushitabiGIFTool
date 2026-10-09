@@ -256,6 +256,46 @@ if st.button("GIF生成"):
 
     else:
 
+        background_img = Image.open(
+            background_file
+        ).convert("RGBA")
+
+        background_img = background_img.resize(
+            (1200, 1200)
+        )
+
+        loaded_characters = []
+
+        for character_file in character_files:
+
+            img = Image.open(
+                character_file
+            ).convert("RGBA")
+
+            loaded_characters.append(
+                {
+                    "file_name": character_file.name,
+                    "image": img
+                }
+            )
+
+        st.success(
+            "画像読込成功"
+        )
+
+        st.write(
+            f"背景画像: {background_file.name}"
+        )
+
+        st.write(
+            f"キャラクター数: {len(loaded_characters)}"
+        )
+
+        st.image(
+            background_img,
+            caption="背景画像",
+            width=300
+        )
         # --------------------------
         # 背景画像読込
         # --------------------------
