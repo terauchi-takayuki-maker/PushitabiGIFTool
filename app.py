@@ -10,7 +10,18 @@ st.set_page_config(
 )
 
 st.title("🚄 Pushitabi GIF Generator")
+def trim_transparent_margin(img):
 
+    rgba_img = img.convert("RGBA")
+
+    alpha = rgba_img.getchannel("A")
+
+    bbox = alpha.getbbox()
+
+    if bbox is None:
+        return rgba_img
+
+    return rgba_img.crop(bbox)
 # ----------------------------
 # 背景画像
 # ----------------------------
