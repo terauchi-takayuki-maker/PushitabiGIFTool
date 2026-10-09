@@ -3,13 +3,31 @@ import io
 
 import streamlit as st
 
+# GIF生成用
+from io import BytesIO
+
 st.set_page_config(
     page_title="Pushitabi GIF Tool",
     layout="wide"
 )
 
 st.title("🚄 Pushitabi GIF Generator")
+# ==========================================
+# 透明余白削除
+# ==========================================
 
+def trim_transparent_margin(img):
+
+    rgba_img = img.convert("RGBA")
+
+    alpha = rgba_img.getchannel("A")
+
+    bbox = alpha.getbbox()
+
+    if bbox is None:
+        return rgba_img
+
+    return rgba_img.crop(bbox)
 # ----------------------------
 # 背景画像
 # ----------------------------
