@@ -276,11 +276,25 @@ if st.button("GIF生成"):
 
         for character_file in character_files:
 
-            img = Image.open(
-                character_file
-            ).convert("RGBA")
+    img = Image.open(
+        character_file
+    ).convert("RGBA")
 
-          loaded_characters.append(
+    loaded_characters.append(
+        {
+            "file_name": character_file.name,
+            "image": img,
+            "order": character_settings[
+                len(loaded_characters)
+            ]["order"],
+            "duration": character_settings[
+                len(loaded_characters)
+            ]["duration"],
+            "adjust": character_settings[
+                len(loaded_characters)
+            ]["adjust"]
+        }
+    )
     {
         "file_name": character_file.name,
         "image": img,
