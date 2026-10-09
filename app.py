@@ -348,26 +348,26 @@ if st.button("GIF生成"):
             f"キャラクター数: {len(loaded_characters)}"
         )
 
-       loaded_characters.sort(
-key=lambda x: x["order"]
-)
-    
-gif_buffer = generate_gif_buffer(
-    background_img,
-    loaded_characters
-)
+      　 loaded_characters.sort(
+            key=lambda x: x["order"]
+        )
 
-st.success(
-    "GIF生成成功"
-)
+        gif_buffer = generate_gif_buffer(
+            background_img,
+            loaded_characters
+        )
 
-st.image(
-    gif_buffer.getvalue()
-)
+        st.success(
+            "GIF生成成功"
+        )
 
-st.download_button(
-    "GIFダウンロード",
-    data=gif_buffer.getvalue(),
-    file_name="pushitabi.gif",
-    mime="image/gif"
-)
+        st.image(
+            gif_buffer.getvalue()
+        )
+
+        st.download_button(
+            "GIFダウンロード",
+            data=gif_buffer.getvalue(),
+            file_name="pushitabi.gif",
+            mime="image/gif"
+        )
