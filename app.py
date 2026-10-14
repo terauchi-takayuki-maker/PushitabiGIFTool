@@ -11,7 +11,9 @@ st.set_page_config(
 
 st.title("🚄 Pushitabi GIF Generator")
 def trim_transparent_margin(img):
+def generate_gif_buffer():
 
+    return "OK"
     rgba_img = img.convert("RGBA")
 
     alpha = rgba_img.getchannel("A")
