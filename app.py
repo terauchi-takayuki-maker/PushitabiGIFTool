@@ -31,7 +31,7 @@ def generate_gif_buffer(
 
     frame = background_img.copy()
 
-if len(loaded_characters) > 0:
+    if len(loaded_characters) > 0:
 
     character_img = loaded_characters[0]["image"]
 
