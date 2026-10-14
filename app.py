@@ -8,12 +8,8 @@ st.set_page_config(
     page_title="Pushitabi GIF Tool",
     layout="wide"
 )
-
-st.title("🚄 Pushitabi GIF Generator")
 def trim_transparent_margin(img):
-def generate_gif_buffer():
 
-    return "OK"
     rgba_img = img.convert("RGBA")
 
     alpha = rgba_img.getchannel("A")
@@ -24,6 +20,14 @@ def generate_gif_buffer():
         return rgba_img
 
     return rgba_img.crop(bbox)
+
+
+def generate_gif_buffer():
+
+    return "OK"
+
+st.title("🚄 Pushitabi GIF Generator")
+
 # ----------------------------
 # 背景画像
 # ----------------------------
