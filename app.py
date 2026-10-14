@@ -33,17 +33,17 @@ def generate_gif_buffer(
 
     if len(loaded_characters) > 0:
 
-    character_img = loaded_characters[0]["image"]
+        character_img = loaded_characters[0]["image"]
 
-    st.write(
-        f"キャラサイズ: {character_img.size}"
-    )
+        st.write(
+            f"キャラサイズ: {character_img.size}"
+        )
 
-    frame.paste(
-        character_img,
-        (0, 0),
-        character_img
-    )
+        frame.paste(
+            character_img,
+            (0, 0),
+            character_img
+        )
 
     gif_buffer = io.BytesIO()
 
