@@ -190,14 +190,15 @@ if st.button("GIF生成"):
             key=lambda x: x["order"]
         )
 
-        st.write(
+               st.write(
             "並び替え完了"
         )
-result = generate_gif_buffer(
-    background_img,
-    loaded_characters
-)
 
-st.write(
-    f"generate_gif_buffer結果: {result}"
-)
+        result = generate_gif_buffer(
+            background_img,
+            loaded_characters
+        )
+
+        st.write(
+            f"generate_gif_buffer結果: {result}"
+        )
