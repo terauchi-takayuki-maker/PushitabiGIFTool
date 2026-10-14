@@ -54,14 +54,14 @@ frame.paste(
 
 gif_buffer = io.BytesIO()
 
-    frame.save(
-        gif_buffer,
-        format="GIF"
-    )
+frame.save(
+    gif_buffer,
+    format="GIF"
+)
 
-    gif_buffer.seek(0)
+gif_buffer.seek(0)
 
-    return gif_buffer
+return gif_buffer
 
 st.title("🚄 Pushitabi GIF Generator")
 
