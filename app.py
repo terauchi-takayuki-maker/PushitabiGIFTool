@@ -37,15 +37,19 @@ def generate_gif_buffer(
 
         character_img = character["image"]
 
-        adjust = character["adjust"]
+        adjust = max(
+            10,
+            int(character["adjust"])
+        )
 
         st.write(
             f"adjust値: {adjust}"
-)
+        )
 
         new_width = int(
-            300 * float(adjust) / 100
-)
+            300 * adjust / 100
+        )
+
         new_height = int(
             character_img.height
             * new_width
