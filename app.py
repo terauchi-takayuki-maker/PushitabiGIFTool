@@ -205,11 +205,15 @@ if st.button("GIF生成"):
             "並び替え完了"
         )
 
-        result = generate_gif_buffer(
-            background_img,
-            loaded_characters
-        )
+gif_buffer = generate_gif_buffer(
+    background_img,
+    loaded_characters
+)
 
-        st.write(
-            f"generate_gif_buffer結果: {result}"
-        )
+st.success(
+    "GIF生成成功"
+)
+
+st.image(
+    gif_buffer.getvalue()
+)
