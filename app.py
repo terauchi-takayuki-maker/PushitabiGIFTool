@@ -22,9 +22,12 @@ def trim_transparent_margin(img):
     return rgba_img.crop(bbox)
 
 
-def generate_gif_buffer():
+def generate_gif_buffer(
+    background_img,
+    loaded_characters
+):
 
-    return "OK"
+    return len(loaded_characters)
 
 st.title("🚄 Pushitabi GIF Generator")
 
@@ -190,8 +193,10 @@ if st.button("GIF生成"):
         st.write(
             "並び替え完了"
         )
-        result = generate_gif_buffer()
-
+result = generate_gif_buffer(
+    background_img,
+    loaded_characters
+)
         st.write(
             f"generate_gif_buffer結果: {result}"
         )
