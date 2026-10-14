@@ -52,7 +52,7 @@ frame.paste(
     (0, 0)
 )
 
-    gif_buffer = io.BytesIO()
+gif_buffer = io.BytesIO()
 
     frame.save(
         gif_buffer,
