@@ -29,9 +29,11 @@ def generate_gif_buffer(
 
     import io
 
-    frame = background_img.copy()
+    frames = []
 
     for character in loaded_characters:
+
+        frame = background_img.copy()
 
         character_img = character["image"]
 
@@ -61,11 +63,19 @@ def generate_gif_buffer(
             character_img
         )
 
+        frames.append(
+            frame.convert("RGBA")
+        )
+
     gif_buffer = io.BytesIO()
 
-    frame.save(
+    frames[0].save(
         gif_buffer,
-        format="GIF"
+        format="GIF",
+        save_all=True,
+        append_images=frames[1:],
+        duration=1000,
+        loop=0
     )
 
     gif_buffer.seek(0)
