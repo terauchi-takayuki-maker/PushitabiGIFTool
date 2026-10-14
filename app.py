@@ -43,14 +43,19 @@ def generate_gif_buffer(
             f"キャラサイズ: {character_img.size}"
         )
 
-character_img = character_img.resize(
-    (300, 300)
-)
+        character_img = character_img.resize(
+            (300, 300)
+        )
 
-frame.paste(
-    character_img,
-    (0, 0)
-)
+        st.image(
+            character_img,
+            caption="キャラ確認"
+        )
+
+        frame.paste(
+            character_img,
+            (0, 0)
+        )
 
     gif_buffer = io.BytesIO()
 
