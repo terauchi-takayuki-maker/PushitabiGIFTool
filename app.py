@@ -190,3 +190,8 @@ if st.button("GIF生成"):
         st.write(
             "並び替え完了"
         )
+        result = generate_gif_buffer()
+
+        st.write(
+            f"generate_gif_buffer結果: {result}"
+        )
