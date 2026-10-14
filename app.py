@@ -27,7 +27,18 @@ def generate_gif_buffer(
     loaded_characters
 ):
 
-    return len(loaded_characters)
+    import io
+
+    gif_buffer = io.BytesIO()
+
+    background_img.save(
+        gif_buffer,
+        format="GIF"
+    )
+
+    gif_buffer.seek(0)
+
+    return gif_buffer
 
 st.title("🚄 Pushitabi GIF Generator")
 
