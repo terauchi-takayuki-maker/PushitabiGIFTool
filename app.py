@@ -190,7 +190,7 @@ if st.button("GIF生成"):
             key=lambda x: x["order"]
         )
 
-               st.write(
+                   st.write(
             "並び替え完了"
         )
 
