@@ -31,17 +31,9 @@ def generate_gif_buffer(
 
     frame = background_img.copy()
 
-    if len(loaded_characters) > 0:
+    for character in loaded_characters:
 
-        character_img = loaded_characters[0]["image"]
-
-        st.write(
-            f"背景サイズ: {frame.size}"
-        )
-
-        st.write(
-            f"キャラサイズ: {character_img.size}"
-        )
+        character_img = character["image"]
 
         character_img = character_img.resize(
             (300, 300)
