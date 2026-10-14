@@ -37,17 +37,21 @@ def generate_gif_buffer(
 
         character_img = character["image"]
 
-        new_width = 300
+adjust = character["adjust"]
 
-        new_height = int(
-            character_img.height
-            * new_width
-            / character_img.width
-        )
+new_width = int(
+    300 * adjust / 100
+)
 
-        character_img = character_img.resize(
-            (new_width, new_height)
-        )
+new_height = int(
+    character_img.height
+    * new_width
+    / character_img.width
+)
+
+character_img = character_img.resize(
+    (new_width, new_height)
+)
 
         x = (
             frame.width - character_img.width
