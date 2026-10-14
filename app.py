@@ -52,10 +52,16 @@ def generate_gif_buffer(
             caption="キャラ確認"
         )
 
-        frame.paste(
-            character_img,
-            (0, 0)
-        )
+frame.paste(
+    character_img,
+    (0, 0),
+    character_img
+)
+
+st.image(
+    frame,
+    caption="合成確認"
+)
 
     gif_buffer = io.BytesIO()
 
