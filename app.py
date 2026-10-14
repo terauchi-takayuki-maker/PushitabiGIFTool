@@ -197,6 +197,7 @@ result = generate_gif_buffer(
     background_img,
     loaded_characters
 )
-        st.write(
-            f"generate_gif_buffer結果: {result}"
-        )
+
+st.write(
+    f"generate_gif_buffer結果: {result}"
+)
