@@ -29,9 +29,20 @@ def generate_gif_buffer(
 
     import io
 
+    frame = background_img.copy()
+
+    if len(loaded_characters) > 0:
+
+        character_img = loaded_characters[0]["image"]
+
+        frame.alpha_composite(
+            character_img,
+            (0, 0)
+        )
+
     gif_buffer = io.BytesIO()
 
-    background_img.save(
+    frame.save(
         gif_buffer,
         format="GIF"
     )
