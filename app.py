@@ -47,11 +47,20 @@ def generate_gif_buffer(
             (300, 300)
         )
 
+        x = (
+            frame.width - character_img.width
+        ) // 2
+
+        y = (
+            frame.height - character_img.height
+        ) // 2
+
         frame.paste(
             character_img,
-            (0, 0),
+            (x, y),
             character_img
         )
+
 
     gif_buffer = io.BytesIO()
 
