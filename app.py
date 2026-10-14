@@ -36,32 +36,28 @@ def generate_gif_buffer(
         character_img = loaded_characters[0]["image"]
 
         st.write(
+            f"背景サイズ: {frame.size}"
+        )
+
+        st.write(
             f"キャラサイズ: {character_img.size}"
         )
 
-st.write(
-    f"背景サイズ: {frame.size}"
-)
+        frame.paste(
+            character_img,
+            (0, 0)
+        )
 
-st.write(
-    f"キャラサイズ: {character_img.size}"
-)
+    gif_buffer = io.BytesIO()
 
-frame.paste(
-    character_img,
-    (0, 0)
-)
+    frame.save(
+        gif_buffer,
+        format="GIF"
+    )
 
-gif_buffer = io.BytesIO()
+    gif_buffer.seek(0)
 
-frame.save(
-    gif_buffer,
-    format="GIF"
-)
-
-gif_buffer.seek(0)
-
-return gif_buffer
+    return gif_buffer
 
 st.title("🚄 Pushitabi GIF Generator")
 
