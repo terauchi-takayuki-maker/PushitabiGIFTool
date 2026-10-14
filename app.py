@@ -31,14 +31,19 @@ def generate_gif_buffer(
 
     frame = background_img.copy()
 
-    if len(loaded_characters) > 0:
+if len(loaded_characters) > 0:
 
-        character_img = loaded_characters[0]["image"]
+    character_img = loaded_characters[0]["image"]
 
-        frame.alpha_composite(
-            character_img,
-            (0, 0)
-        )
+    st.write(
+        f"キャラサイズ: {character_img.size}"
+    )
+
+    frame.paste(
+        character_img,
+        (0, 0),
+        character_img
+    )
 
     gif_buffer = io.BytesIO()
 
