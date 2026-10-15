@@ -203,11 +203,11 @@ character_settings.append(
     }
 )
 
-    st.markdown("---")
+st.markdown("---")
 
-    st.subheader("現在の設定")
+st.subheader("現在の設定")
 
-    st.json(character_settings)
+st.json(character_settings)
 # ----------------------------
 # GIF生成ボタン
 # ----------------------------
