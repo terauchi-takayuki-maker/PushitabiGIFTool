@@ -249,37 +249,37 @@ if st.button("GIF生成"):
             caption="背景画像",
             width=300
         )
-        loaded_characters = []
+loaded_characters = []
 
 for index, character_file in enumerate(
     character_files,
     start=1
 ):
-            img = Image.open(
-                character_file
-            ).convert("RGBA")
+    img = Image.open(
+        character_file
+    ).convert("RGBA")
 
-        loaded_characters.append(
-            {
-                "file_name": character_file.name,
-                "image": img,
-                "order": character_settings[
-                    len(loaded_characters)
-                ]["order"],
-                "duration": character_settings[
-                    len(loaded_characters)
-                ]["duration"],
-                "adjust": character_settings[
-                    len(loaded_characters)
-                ]["adjust"],
-                "x": character_settings[
-                    len(loaded_characters)
-                ]["x"],
-                "y": character_settings[
-                    len(loaded_characters)
-                ]["y"]
-            }
-        )
+    loaded_characters.append(
+        {
+            "file_name": character_file.name,
+            "image": img,
+            "order": character_settings[
+                len(loaded_characters)
+            ]["order"],
+            "duration": character_settings[
+                len(loaded_characters)
+            ]["duration"],
+            "adjust": character_settings[
+                len(loaded_characters)
+            ]["adjust"],
+            "x": character_settings[
+                len(loaded_characters)
+            ]["x"],
+            "y": character_settings[
+                len(loaded_characters)
+            ]["y"]
+        }
+    )
 
         st.write(
             f"読込キャラ数: {len(loaded_characters)}"
