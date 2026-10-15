@@ -30,6 +30,7 @@ def generate_gif_buffer(
     import io
 
     frames = []
+    durations = []
 
     for character in loaded_characters:
 
@@ -77,6 +78,10 @@ def generate_gif_buffer(
             frame.convert("RGBA")
         )
 
+        durations.append(
+            character["duration"] * 1000
+        )
+
     gif_buffer = io.BytesIO()
 
     frames[0].save(
@@ -84,7 +89,7 @@ def generate_gif_buffer(
         format="GIF",
         save_all=True,
         append_images=frames[1:],
-        duration=1000,
+        duration=durations,
         loop=0
     )
 
