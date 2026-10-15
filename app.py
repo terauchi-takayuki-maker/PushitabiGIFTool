@@ -250,8 +250,10 @@ if st.button("GIF生成"):
         )
         loaded_characters = []
 
-        for character_file in character_files:
-
+for index, character_file in enumerate(
+    character_files,
+    start=1
+):
             img = Image.open(
                 character_file
             ).convert("RGBA")
