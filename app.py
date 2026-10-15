@@ -127,11 +127,11 @@ character_files = st.file_uploader(
 # キャラクター設定
 # ----------------------------
 
+character_settings = []
+
 if character_files:
 
     st.subheader("キャラクター設定")
-
-    character_settings = []
 
     for index, character_file in enumerate(
         character_files,
