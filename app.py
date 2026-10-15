@@ -61,19 +61,24 @@ def generate_gif_buffer(
         )
 
         x = (
-            frame.width - character_img.width
-        ) // 2
+            (
+                frame.width
+                - character_img.width
+            ) // 2
+        ) + character["x"]
 
         y = (
-            frame.height - character_img.height
-        ) // 2
+            (
+                frame.height
+                - character_img.height
+            ) // 2
+        ) + character["y"]
 
         frame.paste(
             character_img,
             (x, y),
             character_img
         )
-
         frames.append(
             frame.convert("RGBA")
         )
@@ -172,15 +177,31 @@ if character_files:
                 value=0,
                 step=5
             )
+x_adjust = st.slider(
+    f"X位置_{index}",
+    min_value=-500,
+    max_value=500,
+    value=0,
+    step=10
+)
 
-            character_settings.append(
-                {
-                    "file_name": character_file.name,
-                    "order": display_order,
-                    "duration": display_time,
-                    "adjust": size_adjust
-                }
-            )
+y_adjust = st.slider(
+    f"Y位置_{index}",
+    min_value=-500,
+    max_value=500,
+    value=0,
+    step=10
+)
+character_settings.append(
+    {
+        "file_name": character_file.name,
+        "order": display_order,
+        "duration": display_time,
+        "adjust": size_adjust,
+        "x": x_adjust,
+        "y": y_adjust
+    }
+)
 
     st.markdown("---")
 
@@ -235,7 +256,7 @@ if st.button("GIF生成"):
                 character_file
             ).convert("RGBA")
 
-            loaded_characters.append(
+loaded_characters.append(
     {
         "file_name": character_file.name,
         "image": img,
@@ -247,9 +268,16 @@ if st.button("GIF生成"):
         ]["duration"],
         "adjust": character_settings[
             len(loaded_characters)
-        ]["adjust"]
+        ]["adjust"],
+        "x": character_settings[
+            len(loaded_characters)
+        ]["x"],
+        "y": character_settings[
+            len(loaded_characters)
+        ]["y"]
     }
 )
+
 
         st.write(
             f"読込キャラ数: {len(loaded_characters)}"
