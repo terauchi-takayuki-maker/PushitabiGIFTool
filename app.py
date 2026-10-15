@@ -216,19 +216,16 @@ st.json(character_settings)
 if st.button("GIF生成"):
 
     if not background_file:
-
         st.error(
             "背景画像を選択してください"
         )
 
     elif not character_files:
-
         st.error(
             "キャラクター画像を選択してください"
         )
 
     else:
-
         st.success(
             "GIF生成テスト成功"
         )
@@ -240,6 +237,7 @@ if st.button("GIF生成"):
         st.write(
             f"キャラクター数: {len(character_files)}"
         )
+
         background_img = Image.open(
             background_file
         ).convert("RGBA")
@@ -249,80 +247,60 @@ if st.button("GIF生成"):
             caption="背景画像",
             width=300
         )
-    else:
 
-        st.success(
-            "GIF生成テスト成功"
-        )
-
-        st.write(
-            f"背景画像: {background_file.name}"
-        )
-
-        st.write(
-            f"キャラクター数: {len(character_files)}"
-        )
-        background_img = Image.open(
-            background_file
-        ).convert("RGBA")
-
-        st.image(
-            background_img,
-            caption="背景画像",
-            width=300
-        )
         loaded_characters = []
+
         for index, character_file in enumerate(
             character_files,
             start=1
         ):
-    img = Image.open(
-        character_file
-    ).convert("RGBA")
+            img = Image.open(
+                character_file
+            ).convert("RGBA")
 
-    loaded_characters.append(
-        {
-            "file_name": character_file.name,
-            "image": img,
-            "order": character_settings[
-                len(loaded_characters)
-            ]["order"],
-            "duration": character_settings[
-                len(loaded_characters)
-            ]["duration"],
-            "adjust": character_settings[
-                len(loaded_characters)
-            ]["adjust"],
-            "x": character_settings[
-                len(loaded_characters)
-            ]["x"],
-            "y": character_settings[
-                len(loaded_characters)
-            ]["y"]
-        }
-    )
+            loaded_characters.append(
+                {
+                    "file_name": character_file.name,
+                    "image": img,
+                    "order": character_settings[
+                        index - 1
+                    ]["order"],
+                    "duration": character_settings[
+                        index - 1
+                    ]["duration"],
+                    "adjust": character_settings[
+                        index - 1
+                    ]["adjust"],
+                    "x": character_settings[
+                        index - 1
+                    ]["x"],
+                    "y": character_settings[
+                        index - 1
+                    ]["y"]
+                }
+            )
 
-st.write(
-    f"読込キャラ数: {len(loaded_characters)}"
-)
+        st.write(
+            f"読込キャラ数: {len(loaded_characters)}"
+        )
 
-loaded_characters.sort(
-    key=lambda x: x["order"]
-)
+        loaded_characters.sort(
+            key=lambda x: x["order"]
+        )
 
-st.write(
-    "並び替え完了"
-)
+        st.write(
+            "並び替え完了"
+        )
 
-gif_buffer = generate_gif_buffer(
-    background_img,
-    loaded_characters
-)
+        gif_buffer = generate_gif_buffer(
+            background_img,
+            loaded_characters
+        )
 
-st.success(
-    "GIF生成成功"
-)
+        st.success(
+            "GIF生成成功"
+        )
 
-st.image(
-    gif_buffer.getvalue()
-)
+        st.image(
+            gif_buffer.getvalue()
+        )
