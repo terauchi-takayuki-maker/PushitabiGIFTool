@@ -249,12 +249,33 @@ if st.button("GIF生成"):
             caption="背景画像",
             width=300
         )
-loaded_characters = []
+    else:
 
-for index, character_file in enumerate(
-    character_files,
-    start=1
-):
+        st.success(
+            "GIF生成テスト成功"
+        )
+
+        st.write(
+            f"背景画像: {background_file.name}"
+        )
+
+        st.write(
+            f"キャラクター数: {len(character_files)}"
+        )
+        background_img = Image.open(
+            background_file
+        ).convert("RGBA")
+
+        st.image(
+            background_img,
+            caption="背景画像",
+            width=300
+        )
+        loaded_characters = []
+        for index, character_file in enumerate(
+            character_files,
+            start=1
+        ):
     img = Image.open(
         character_file
     ).convert("RGBA")
@@ -281,26 +302,27 @@ for index, character_file in enumerate(
         }
     )
 
-        st.write(
-            f"読込キャラ数: {len(loaded_characters)}"
-        )
-        loaded_characters.sort(
-            key=lambda x: x["order"]
-        )
+st.write(
+    f"読込キャラ数: {len(loaded_characters)}"
+)
 
-        st.write(
-            "並び替え完了"
-        )
+loaded_characters.sort(
+    key=lambda x: x["order"]
+)
 
-        gif_buffer = generate_gif_buffer(
-            background_img,
-            loaded_characters
-        )
+st.write(
+    "並び替え完了"
+)
 
-        st.success(
-            "GIF生成成功"
-        )
+gif_buffer = generate_gif_buffer(
+    background_img,
+    loaded_characters
+)
 
-        st.image(
-            gif_buffer.getvalue()
-        )
+st.success(
+    "GIF生成成功"
+)
+
+st.image(
+    gif_buffer.getvalue()
+)
