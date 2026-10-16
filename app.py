@@ -317,3 +317,9 @@ if st.button("GIF生成"):
         st.image(
             gif_buffer.getvalue()
         )
+        st.download_button(
+            "GIFダウンロード",
+            data=gif_buffer.getvalue(),
+            file_name="pushitabi.gif",
+            mime="image/gif"
+        )
