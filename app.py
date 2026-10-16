@@ -50,14 +50,18 @@ def generate_gif_buffer(
             f"adjust値: {adjust}"
         )
 
-        new_width = int(
-            300 * (100 + adjust) / 100
-        )
+        base_height = 700
 
         new_height = int(
-            character_img.height
-            * new_width
-            / character_img.width
+            base_height
+            * (100 + adjust)
+            / 100
+        )
+
+        new_width = int(
+            character_img.width
+            * new_height
+            / character_img.height
         )
 
         character_img = character_img.resize(
