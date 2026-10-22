@@ -130,7 +130,7 @@ with st.expander(
 # ----------------------------
 
 background_file = st.file_uploader(
-    "背景画像",
+    "背景画像　ここにアップロード",
     type=[
         "png",
         "jpg",
@@ -143,7 +143,7 @@ background_file = st.file_uploader(
 # ----------------------------
 
 character_files = st.file_uploader(
-    "キャラクター画像",
+    "キャラクター画像　ここにアップロード",
     type=[
         "png",
         "jpg",
