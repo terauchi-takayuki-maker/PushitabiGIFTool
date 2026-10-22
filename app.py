@@ -208,7 +208,7 @@ if character_files:
             )
 
             display_order = st.number_input(
-                f"表示順_{index}",
+                f"表示順（{index}人目）"
                 min_value=1,
                 value=index
             )
