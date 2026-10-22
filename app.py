@@ -124,23 +124,28 @@ st.info(
 """
 )
 
-st.info(
+st.markdown(
     """
-📖 推奨素材・注意事項
+<div style="
+background-color:#F3F4F6;
+padding:15px;
+border-radius:8px;
+">
 
-■ 背景画像
+📖 <b>推奨素材・注意事項</b><br><br>
 
-・PNG / JPG / JPEG / WEBP対応
+■ 背景画像<br>
+・PNG / JPG / JPEG / WEBP対応<br><br>
 
+■ キャラ画像<br>
+・PNG / JPG / JPEG / WEBP対応<br>
+・背景透過PNG推奨
+　※透過素材を使用するとより綺麗にGIFが生成されます
 
-■ キャラ画像
-
-・PNG / JPG / JPEG / WEBP対応
-
-・背景透過PNG推奨　　※透過素材を使用するとより綺麗にGIFが生成されます
-
-"""
-    )
+</div>
+""",
+    unsafe_allow_html=True
+)
 # ----------------------------
 # 背景画像
 # ----------------------------
