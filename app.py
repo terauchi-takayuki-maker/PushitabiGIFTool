@@ -203,11 +203,15 @@ if character_files:
                 f"ファイル名: {character_file.name}"
             )
 
-            display_order = st.number_input(
-                f"表示順_{index}",
-                min_value=1,
-                value=index
-            )
+st.caption(
+    "表示順の変更はこちら"
+)
+
+display_order = st.number_input(
+    f"表示順_{index}",
+    min_value=1,
+    value=index
+)
 
             display_time = st.number_input(
                 f"表示時間(秒)_{index}",
