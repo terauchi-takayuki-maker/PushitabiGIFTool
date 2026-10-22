@@ -39,7 +39,7 @@ def generate_gif_buffer(
         character_img = character["image"]
 
         st.write(
-            f"トリミング後サイズ: {character_img.size}"
+            f"adjust値: {adjust}"
         )
 
         adjust = int(
