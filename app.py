@@ -102,7 +102,7 @@ def generate_gif_buffer(
 
     return gif_buffer
 
-st.title("🚄 Pushitabi GIF Generator")
+st.title("🚄 GIF作成ツール")
 
 with st.expander(
     "📖 推奨素材・注意事項"
