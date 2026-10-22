@@ -242,6 +242,10 @@ if st.button("GIF生成"):
             background_file
         ).convert("RGBA")
 
+        background_img = background_img.resize(
+            (1200, 1200)
+        )
+
         st.image(
             background_img,
             caption="背景画像",
