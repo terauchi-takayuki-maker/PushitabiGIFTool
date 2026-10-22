@@ -5,7 +5,7 @@ from io import BytesIO
 import streamlit as st
 
 st.set_page_config(
-    page_title="Pushitabi GIF Tool",
+    page_title="GIF作成ツール",
     layout="wide"
 )
 def trim_transparent_margin(img):
