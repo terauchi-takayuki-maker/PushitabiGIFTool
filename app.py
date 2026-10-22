@@ -224,8 +224,8 @@ if character_files:
                 step=0.1
             )
 
-            st.caption(
-            "キャラサイズの変更はこちら"
+            st.markdown(
+            "小さく ← サイズ補正 → 大きく"
             )
             
             size_adjust = st.slider(
@@ -235,8 +235,8 @@ if character_files:
                 value=0,
                 step=5
             )
-            st.caption(
-            "表示位置の左右調整はこちら"
+            st.markdown(
+            "左へ ← X位置 → 右へ"
             )
             x_adjust = st.slider(
                 f"X位置_{index}",
@@ -246,8 +246,8 @@ if character_files:
                 step=10
             )
 
-            st.caption(
-            "表示位置の上下調整はこちら"
+            st.markdown(
+            "上へ ← Y位置 → 下へ"
             )
             y_adjust = st.slider(
                 f"Y位置_{index}",
