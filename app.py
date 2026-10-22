@@ -213,7 +213,7 @@ if character_files:
                 value=index
             )
 
-                        st.caption(
+            st.caption(
             "表示時間の変更はこちら"
             )
             
