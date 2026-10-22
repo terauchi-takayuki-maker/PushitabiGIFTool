@@ -104,12 +104,9 @@ def generate_gif_buffer(
 
 st.title("🚄 GIF作成ツール")
 
-with st.expander(
-    "📖 推奨素材・注意事項"
-):
-
-    st.markdown(
-        """
+st.info(
+    """
+📖 推奨素材・注意事項
 ■ 背景画像
 ・PNG / JPG / JPEG / WEBP対応
 ・出力GIFは1200×1200pxで生成されます
