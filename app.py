@@ -151,8 +151,10 @@ border-radius:8px;
 # 背景画像
 # ----------------------------
 
+st.subheader("① 背景画像をアップロード")
+
 background_file = st.file_uploader(
-    "背景画像　ここにアップロード",
+    "",
     type=[
         "png",
         "jpg",
@@ -164,8 +166,10 @@ background_file = st.file_uploader(
 # キャラクター画像
 # ----------------------------
 
+st.subheader("② キャラクター画像をアップロード")
+
 character_files = st.file_uploader(
-    "キャラクター画像　ここにアップロード",
+    "",
     type=[
         "png",
         "jpg",
