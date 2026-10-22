@@ -146,7 +146,7 @@ st.info(
 # ----------------------------
 
 background_file = st.file_uploader(
-    "①背景画像　ここにアップロード",
+    "背景画像　ここにアップロード",
     type=[
         "png",
         "jpg",
@@ -159,7 +159,7 @@ background_file = st.file_uploader(
 # ----------------------------
 
 character_files = st.file_uploader(
-    "②キャラクター画像　ここにアップロード",
+    "キャラクター画像　ここにアップロード",
     type=[
         "png",
         "jpg",
