@@ -102,7 +102,7 @@ def generate_gif_buffer(
 
     return gif_buffer
 
-st.title("🚄 GIF作成ツール")
+st.title("🖼️ GIF作成ツール")
 
 st.info(
     """
