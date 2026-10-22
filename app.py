@@ -110,16 +110,25 @@ st.title("🚄 Pushitabi GIF Generator")
 
 background_file = st.file_uploader(
     "背景画像",
-    type=["png", "jpg", "jpeg"]
+    type=[
+        "png",
+        "jpg",
+        "jpeg",
+        "webp"
+    ]
 )
-
 # ----------------------------
 # キャラクター画像
 # ----------------------------
 
 character_files = st.file_uploader(
     "キャラクター画像",
-    type=["png"],
+    type=[
+        "png",
+        "jpg",
+        "jpeg",
+        "webp"
+    ],
     accept_multiple_files=True
 )
 
