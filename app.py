@@ -104,9 +104,9 @@ def generate_gif_buffer(
 
 st.title("🖼️ GIF作成ツール")
 
-st.markdown(
+st.info(
     """
-📖 <b>利用手順</b>
+📖 **利用手順**
 
 ① 背景画像をアップロード
 
@@ -121,8 +121,8 @@ st.markdown(
 ⑥ GIF生成
 
 ⑦ GIFダウンロード
-""",
-    unsafe_allow_html=True
+⑧ GIF画像が1200×1200pxで生成されます
+"""
 )
 
 st.markdown(
