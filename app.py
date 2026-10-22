@@ -152,7 +152,7 @@ border-radius:8px;
 # ----------------------------
 
 st.markdown(
-    "**① 背景画像をアップロード**"
+    "### ① 背景画像をアップロード"
 )
 
 background_file = st.file_uploader(
