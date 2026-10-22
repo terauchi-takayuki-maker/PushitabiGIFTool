@@ -213,6 +213,10 @@ if character_files:
                 value=index
             )
 
+                        st.caption(
+            "表示時間の変更はこちら"
+            )
+            
             display_time = st.number_input(
                 f"表示時間(秒)_{index}",
                 min_value=0.1,
