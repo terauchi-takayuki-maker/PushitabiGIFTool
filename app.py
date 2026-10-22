@@ -38,16 +38,8 @@ def generate_gif_buffer(
 
         character_img = character["image"]
 
-        st.write(
-            f"adjust値: {adjust}"
-        )
-
         adjust = int(
             character["adjust"]
-        )
-
-        st.write(
-            f"adjust値: {adjust}"
         )
 
         base_height = 700
