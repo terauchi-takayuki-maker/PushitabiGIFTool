@@ -224,12 +224,19 @@ if character_files:
                 step=0.1
             )
 
+            st.caption(
+            "キャラサイズの変更はこちら"
+            )
+            
             size_adjust = st.slider(
                 f"サイズ補正_{index}",
                 min_value=-50,
                 max_value=50,
                 value=0,
                 step=5
+            )
+            st.caption(
+            "表示位置の左右調整はこちら"
             )
             x_adjust = st.slider(
                 f"X位置_{index}",
@@ -239,6 +246,9 @@ if character_files:
                 step=10
             )
 
+            st.caption(
+            "表示位置の上下調整はこちら"
+            )
             y_adjust = st.slider(
                 f"Y位置_{index}",
                 min_value=-500,
