@@ -133,7 +133,6 @@ border-radius:8px;
 ">
 
 📖 <b>推奨素材・注意事項</b><br><br>
-
 ■ 背景画像<br>
 ・PNG / JPG / JPEG / WEBP対応<br><br>
 
